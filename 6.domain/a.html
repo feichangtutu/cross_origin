@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 域名 一级域名二级域名 -->
+  <!-- www.baidu.com -->
+  <!-- video.baidu.com -->
+  <!-- a是通过 http://a.zf1.cn:3000/a.html -->
+  helloa
+  <iframe src="http://b.zf1.cn:3000/b.html" frameborder="0" onload="load()" id="frame"></iframe>
+  <script>
+//	  <!--利用document.domain 实现跨域：
+//	  前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域.
+//    Javascript出于对安全性的考虑，而禁止两个或者多个不同域的页面进行互相操作。
+//	  相同域的页面在相互操作的时候不会有任何问题。-->
+    document.domain = 'zf1.cn'
+    function load() {
+      console.log(frame.contentWindow.a);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+// 嵌入了两层ifram, 需要两次parent
+// 如果当前窗口是一个 <iframe>, <object>, 或者 <frame>,则它的父窗口是嵌入它的那个窗口
+// window.top 返回当前窗口最顶层的父窗口.
+// if (window.parent != window.top) {
+// 至少有三层窗口
+// }
+window.parent.parent.location.hash = location.hash
+  </script>
+</body>
+
+</html>
